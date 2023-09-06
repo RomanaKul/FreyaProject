@@ -12,7 +12,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
-  background-color: #031003;
+  background-color: #160c07;
 }
 
 .layout_margin {
@@ -532,87 +532,12 @@ a:focus {
   position: relative;
   z-index: 2;
 }
-
 .about_section .img-box {
-  width: 90%;
+  width: 40%;
   margin: auto;
   position: relative;
   background-repeat: no-repeat;
   margin-top: -125px;
-}
-
-.about_section .img-box .play_btn {
-  background: #fad932;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 100%;
-  width: 75px;
-  height: 75px;
-  position: absolute;
-  z-index: 3;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.about_section .img-box .play_btn button {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  background-color: transparent;
-  border: none;
-  position: relative;
-  z-index: 5;
-}
-
-.about_section .img-box .play_btn a {
-  background: #fad932;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 100%;
-  width: 75px;
-  height: 75px;
-  position: relative;
-  z-index: 5;
-}
-
-.about_section .img-box .play_btn img {
-  width: 20px;
-  margin-left: 3px;
-}
-
-.about_section .img-box .play_btn::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: #fad932;
-  opacity: 1;
-  border-radius: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.about_section .img-box .play_btn::before {
-  z-index: 2;
-  -webkit-animation: before-animation 1500ms infinite;
-          animation: before-animation 1500ms infinite;
 }
 
 @-webkit-keyframes before-animation {
@@ -643,10 +568,9 @@ a:focus {
 
 .about_section .img-box .about-img {
   width: 100%;
-  -webkit-transform: rotate(-25deg);
-          transform: rotate(-25deg);
   -webkit-animation: hueAnimate .7s infinite;
           animation: hueAnimate .7s infinite;
+  border-radius: 100px;
 }
 
 .about_section .btn-box {
@@ -937,7 +861,8 @@ a:focus {
 }
 
 .client_section .camera_img-box img {
-  width: 100%;
+  width: 80%;
+  border-radius: 10%;
 }
 
 /* info section */
