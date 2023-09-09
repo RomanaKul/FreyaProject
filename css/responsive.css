@@ -57,6 +57,12 @@
         margin-top: 0;
     }
 
+    .training_section .img-box {
+        width: 70%;
+        padding: 0 5px;
+        margin-top: 0;
+    }
+
     .gallery_section .gallery_container .gallery_bg {
         top: -75px;
     }
