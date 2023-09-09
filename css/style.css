@@ -1012,3 +1012,13 @@ a:focus {
   opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
+
+
+/* training section */
+.training_section .detail-box {
+  margin: 35px auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* end training section */
