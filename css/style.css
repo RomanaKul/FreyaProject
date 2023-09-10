@@ -1021,4 +1021,91 @@ a:focus {
   z-index: 2;
 }
 
+.training_section .tbl caption {
+  caption-side: top;
+  text-align: left;
+  color: white;
+  padding: 20px 0;
+}
+.training_section .tbl {
+table-layout: fixed;
+width: 100%;
+border-collapse: collapse;
+border: 1px solid white;
+margin: 40px 0 0 0;
+}
+
+.training_section th,
+.training_section td {
+  padding: 15px;
+}
+
+.training_section thead th:nth-child(1) {
+  width: 7%
+}
+.training_section thead th:nth-child(2) {
+  width: 20%
+}
+.training_section thead th:nth-child(3) {
+  width: 50%
+}
+.training_section thead th:nth-child(4) {
+  width: 23%
+}
+
+.training_section thead,
+.training_section tbody {
+  text-align: center;
+}
+
+.training_section tbody td:nth-child(3) {
+  text-align: left;
+}
+
+.training_section .tbl tr {
+  border: 1px solid white;
+}
+
+.training_section tfoot {
+  border: 1px solid white;
+  text-align: center;
+}
+ .training_section thead,
+ .training_section tfoot {
+  background-color: #fad932;
+  color:#160c07
+ }
+
+ .training_section tbody tr:nth-child(even) {
+  background-color: #25140c;
+ }
+
+ .training_section .tbl .btn_add {
+  background-color:#fad932;
+  color:#160c07;
+  font-weight:bold;
+  border: 3px solid #160c07;
+  border-radius: 10px;
+  padding: 10px;
+ }
+
+ .training_section .tbl .btn_add:hover {
+  background-color:#160c07;
+  color:#fad932;
+ }
+
+ .training_section .tbl .btn_edit {
+  background-color: inherit;
+  border:none;
+ }
+
+ .training_section .tbl .btn_edit:hover {
+  background-color: #fad932;
+  border-radius: 5px;
+ }
+
+ .training_section .tbl .btn_edit img {
+  width: 30px;
+  height: 30px;
+ }
 /* end training section */
