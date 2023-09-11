@@ -1108,4 +1108,77 @@ margin: 40px 0 0 0;
   width: 30px;
   height: 30px;
  }
+
+/* modal window */
+.training_section .modal {
+  display: flex;  flex-direction:column ;
+  justify-content: center;
+  gap: 0.4rem;
+  max-width: 500px;
+  padding: 1.3rem;
+  max-height: 400px;
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  background-color: #36271f;
+  border: 1px solid #fad932;
+  border-radius: 15px;
+}
+
+.training_section .btn-close {
+  position: absolute;
+  right:10px;
+  top:10px;
+  background-color:#fad932;
+  color: #160c07;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 70%;
+  width: 30px;
+}
+
+.training_section .modal p {
+  font-size: 0.9rem;
+  color:white;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.training_section .container_btn {
+  display: flex;
+  justify-content: center;
+}
+
+.training_section .container_btn .btn {
+  padding: 0.8rem;
+  font-weight: 700;
+  background-color:#000000;
+  color:#fad932;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+  width: 7rem;
+  position: absolute;
+  bottom: 10px;
+}
+
+.training_section .overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+} 
+
+.training_section .modal {
+  z-index: 2;
+}
+
+.training_section .hidden {
+  display: none;
+}
+/*end modal window*/
+
 /* end training section */
