@@ -15,8 +15,6 @@
 
 @media (max-width: 1260px) {}
 
-@media (max-width: 1120px) {}
-
 @media (max-width: 992px) {
     .main_nav_menu {
         justify-content: space-between;
@@ -53,12 +51,6 @@
 
     .about_section .img-box {
         width: 100%;
-        padding: 0 5px;
-        margin-top: 0;
-    }
-
-    .training_section .img-box {
-        width: 70%;
         padding: 0 5px;
         margin-top: 0;
     }
@@ -242,4 +234,17 @@
         max-width: 1170px;
     }
 
+}
+
+/*training section*/
+
+@media (min-width: 600px) { .training_page .header_section {
+display: flex;
+}
+.training_page .header_section .main_nav_menu {
+    justify-content: space-around;
+}
+.training_section p {
+    max-width: 700px;
+}
 }
