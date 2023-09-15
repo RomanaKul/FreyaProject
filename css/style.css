@@ -1114,13 +1114,14 @@ margin: 40px 0 0 0;
   display: flex;  flex-direction:column ;
   justify-content: center;
   gap: 0.4rem;
-  max-width: 500px;
   padding: 1.3rem;
   max-height: 400px;
   position: fixed;
+  max-width: 85vw;
+  margin: 5% auto; 
+  left: 0;
+  right: 0;  
   top: 10%;
-  left: 5%;
-  right: 5%;
   background-color: #36271f;
   border: 1px solid #fad932;
   border-radius: 15px;
@@ -1142,7 +1143,7 @@ margin: 40px 0 0 0;
 .training_section .modal p {
   font-size: 0.9rem;
   color:white;
-  margin: 0.4rem 0 0.2rem;
+  text-align: center;
 }
 
 .training_section .container_btn {
@@ -1178,6 +1179,34 @@ margin: 40px 0 0 0;
 
 .training_section .hidden {
   display: none;
+}
+
+.training_section .tbl_modal {
+  height: 60%;
+}
+
+.training_section .tbl_modal tbody {
+  background-color: #160c07;
+  color: white;
+  font-weight: lighter;
+}
+
+.training_section .tbl_modal textarea {
+  width: 100%;
+  background-color: #36271f;
+  color: white;
+  padding: 10px;  
+  font-size: 15px;
+  height: 70%;
+  text-align: center;
+}
+
+.training_section .tbl_modal textarea:hover {
+  outline: 3px solid #36271f;
+}
+
+.training_section .tbl_modal textarea:focus {
+   outline: 3px solid yellow;
 }
 /*end modal window*/
 
