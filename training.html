@@ -105,25 +105,8 @@
                         <th>Редагувати</th>
                     </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Сидіти</td>
-                            <td>Потрібно закріпити, що команда скасовується лише після слова <em>"Добре"</em>.</td>
-                            <td><button class="btn_edit" type="button"><img src="image/edit_btn.webp" alt="edit"></button></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Лежати</td>
-                            <td>Інколи ще плутає з командою <em>"Сидіти"</em>. Швидко розриває команду, не дочекавшись <em>"Добре"</em>.</td>
-                            <td><button class="btn_edit" type="button"><img src="image/edit_btn.webp" alt="edit"></button></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Дай лапу</td>
-                            <td>Навчити швидко міняти на іншу лапу.</td>
-                            <td><button class="btn_edit" type="button"><img src="image/edit_btn.webp" alt="edit"></button></td>
-                        </tr>
+                    <tbody id="tableElement">
+                        
                     </tbody>
                     <tfoot>
                         <th colspan="4">
@@ -144,7 +127,7 @@
                         <tr>
                             <td>1</td>
                             <td><textarea name="command" id="command"></textarea></td>
-                            <td><textarea name="comment" id="comment"></textarea></td>
+                            <td><textarea name="comment" id="command"></textarea></td>
                             <td><button class="btn_edit" type="button"><img src="image/edit_btn.webp" alt="edit"></button></td>
                         </tr>
                     </tbody>
@@ -154,7 +137,7 @@
                                 <button class="btn">Зберегти</button>
                                 </div>
                             </section>
-                            <div class="overlay hidden"></div>
+                            <div class="overlay hidden" id="overlay"></div>
                             <button class="btn_add btn-open" type="submit">
                             Додати команду
                         </button></th>
