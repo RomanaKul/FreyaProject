@@ -1191,21 +1191,23 @@ margin: 40px 0 0 0;
   font-weight: lighter;
 }
 
-.training_section .tbl_modal textarea {
+.training_section .tbl_modal input {
   width: 100%;
   background-color: #36271f;
   color: white;
-  padding: 10px;  
+  padding: 20px;  
   font-size: 15px;
   height: 70%;
-  text-align: center;
+  text-align: left;
+  outline: none;
+  border: none;
 }
 
-.training_section .tbl_modal textarea:hover {
-  outline: 3px solid #36271f;
+.training_section .tbl_modal input:hover {
+  outline: 3px solid white;
 }
 
-.training_section .tbl_modal textarea:focus {
+.training_section .tbl_modal input:focus {
    outline: 3px solid yellow;
 }
 /*end modal window*/
