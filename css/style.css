@@ -1089,9 +1089,11 @@ margin: 40px 0 0 0;
   padding: 10px;
  }
 
- .training_section .tbl .btn_add:hover {
+ .training_section .tbl .btn_add:hover,
+ .training_section .tbl .btn_add:focus {
   background-color:#160c07;
   color:#fad932;
+  outline: none;
  }
 
  .training_section .tbl .btn_edit {
@@ -1163,6 +1165,12 @@ margin: 40px 0 0 0;
   position: absolute;
   bottom: 10px;
 }
+
+.training_section .container_btn .btn:hover,
+.training_section .container_btn .btn:focus {
+  border: 2px solid #fad932;
+}
+
 
 .training_section .overlay {
   position: fixed;

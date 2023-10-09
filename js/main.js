@@ -2,11 +2,13 @@ const modal = document.querySelector(".modal");
 const overlay = document.getElementById("overlay");
 const openModalBtn = document.querySelector(".btn-open");
 const closeModalBtn = document.querySelector(".btn-close");
+const saveInputBtn = document.getElementById("saveBtn");
 
 
 const openModal = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
+  saveInputBtn.classList.remove("hidden");
 };
 
 openModalBtn.addEventListener("click", openModal);
@@ -15,11 +17,28 @@ openModalBtn.addEventListener("click", openModal);
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+  saveInputBtn.classList.add("hidden");
 };
 
 closeModalBtn.addEventListener("click", closeModal);
-
 overlay.addEventListener("click", closeModal);
+saveInputBtn.addEventListener("click", closeModal);
+
+const clearInput = function () {
+  const inputs = document.querySelectorAll("#command, #comment");
+
+  inputs.forEach(input => {
+    input.value = '';
+  });
+}
+
+saveInputBtn.addEventListener("click", clearInput);
+closeModalBtn.addEventListener("click", clearInput);
+overlay.addEventListener("click", clearInput);
+
+
+
+
 
 
 
@@ -36,6 +55,9 @@ for (const command of commands) {
   addCommandToTable(command, container, myIndex)
   myIndex = myIndex + 1
 }
+
+
+
 
 
 
