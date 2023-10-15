@@ -40,8 +40,6 @@ overlay.addEventListener("click", clearInput);
 
 
 
-
-
 const commands = [
   { name: 'Сидіти', comment: 'Потрібно закріпити, що команда скасовується лише після слова "Добре".' },
   { name: 'Лежати', comment: 'Інколи ще плутає з командою "Сидіти". Швидко розриває команду, не дочекавшись "Добре".' },
@@ -50,14 +48,27 @@ const commands = [
 
 const container = document.getElementById("tableElement");
 
-let myIndex = 1;
-for (const command of commands) {
-  addCommandToTable(command, container, myIndex)
-  myIndex = myIndex + 1
+function renderCommands() {
+  let myIndex = 1;
+  container.innerHTML = "";
+  for (const command of commands) {
+    addCommandToTable(command, container, myIndex)
+    myIndex = myIndex + 1
+  }
 }
 
+renderCommands();
 
-
+function getInputCommand() {
+  let inputCommand = document.getElementById('command').value;
+  let inputComment = document.getElementById('comment').value;
+  let input = {
+    name: inputCommand,
+    comment: inputComment
+  }
+  commands.push(input);
+  renderCommands();
+}
 
 
 
