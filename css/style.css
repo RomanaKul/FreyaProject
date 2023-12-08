@@ -1157,6 +1157,7 @@ a:focus {
   background-color: #36271f;
   border: 1px solid #fad932;
   border-radius: 15px;
+  z-index: 2;
 }
 
 .training_section .btn-close {
@@ -1170,6 +1171,7 @@ a:focus {
   border: none;
   border-radius: 70%;
   width: 30px;
+  outline: none;
 }
 
 .training_section .modal p {
@@ -1210,10 +1212,6 @@ a:focus {
   z-index: 1;
 }
 
-.training_section .modal {
-  z-index: 2;
-}
-
 .training_section .hidden {
   display: none;
 }
@@ -1248,5 +1246,87 @@ a:focus {
   outline: 3px solid yellow;
 }
 /*end modal window*/
+
+/*modal edit*/
+.training_section .modalEdit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1.3rem;
+  max-height: 400px;
+  position: fixed;
+  max-width: 85vw;
+  margin: 5% auto;
+  left: 0;
+  right: 0;
+  top: 10%;
+  background-color: #36271f;
+  border: 1px solid #fad932;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.training_section .btn-closeEdit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: #fad932;
+  color: #160c07;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 70%;
+  width: 30px;
+  outline: none;
+}
+
+.training_section .modalEdit p {
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
+}
+
+.training_section .container_btnEdit {
+  display: flex;
+  justify-content: center;
+}
+
+.training_section .container_btnEdit .btnEdit {
+  padding: 0.8rem;
+  font-weight: 700;
+  background-color: #000000;
+  color: #fad932;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-size: 1em;
+  width: 7rem;
+  position: relative;
+  bottom: 10px;
+}
+
+.training_section .btnEdit:hover,
+.training_section .btnEdit:focus {
+  border: 2px solid #fad932;
+  outline: none;
+}
+
+.training_section .overlayEdit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.training_section .hiddenEdit {
+  display: none;
+}
+
+/*end modal edit*/
 
 /* end training section */

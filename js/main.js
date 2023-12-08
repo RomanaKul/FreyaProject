@@ -113,3 +113,41 @@ function CommandElement(commandName, commandComment, index) {
 
   return this.el;
 }
+
+// *** modal window for edit button ***
+
+const button4 = document.getElementsByClassName("btn_edit");
+
+const modalEdit = document.querySelector(".modalEdit");
+const overlayEdit = document.querySelector(".overlayEdit");
+const hiddenEdit = document.querySelector(".hiddenEdit");
+const closeModalEditBtn = document.querySelector(".btn-closeEdit");
+const saveEditBtn = document.querySelector(".btnEdit");
+
+const openModalEdit = function () {
+  modalEdit.classList.remove("hiddenEdit");
+  overlayEdit.classList.remove("hiddenEdit");
+  saveEditBtn.classList.remove("hiddenEdit");
+};
+
+function openModalEditWithBtn() {
+  for (let i = 0; i < button4.length; i++) {
+    if (button4[i]) {
+      let c = button4[i];
+      c.addEventListener("click", openModalEdit);
+    }
+  }
+}
+openModalEditWithBtn();
+
+const closeModalEdit = function () {
+  modalEdit.classList.add("hiddenEdit");
+  overlayEdit.classList.add("hiddenEdit");
+  saveEditBtn.classList.add("hiddenEdit");
+};
+
+closeModalEditBtn.addEventListener("click", closeModalEdit);
+overlayEdit.addEventListener("click", closeModalEdit);
+saveEditBtn.addEventListener("click", closeModalEdit);
+
+// *** end of modal window for edit button ***
