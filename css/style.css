@@ -1327,6 +1327,36 @@ a:focus {
   display: none;
 }
 
+.training_section .tbl_modalEdit {
+  height: 60%;
+}
+
+.training_section .tbl_modalEdit tbody {
+  background-color: #160c07;
+  color: white;
+  font-weight: lighter;
+}
+
+.training_section .tbl_modalEdit input {
+  width: 100%;
+  background-color: #36271f;
+  color: white;
+  padding: 20px;
+  font-size: 15px;
+  height: 70%;
+  text-align: left;
+  outline: none;
+  border: none;
+}
+
+.training_section .tbl_modalEdit input:hover {
+  outline: 3px solid white;
+}
+
+.training_section .tbl_modalEdit input:focus {
+  outline: 3px solid yellow;
+}
+
 /*end modal edit*/
 
 /* end training section */
