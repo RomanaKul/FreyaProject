@@ -94,7 +94,6 @@
                   Більше
                 </a>
 
-
                 <div class="training_table">
                   <table class="tbl">
                     <caption>
@@ -110,39 +109,6 @@
                       </tr>
                     </thead>
                     <tbody id="tableElement">
-                      <!-- modal for edit -->
-
-                      <section class="modalEdit hiddenEdit">
-                        <div class="flex">
-                          <button class="btn-closeEdit">⨉</button>
-                        </div>
-
-                        <p>Here should be the table</p>
-
-                        <!-- can't add table to modal window -->
-
-
-                        <!-- <table class="tbl_modalEdit">
-                          <thead>
-                            <tr>
-                              <th>Команда</th>
-                              <th>Коментар</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><input name="commandEdit" id="commandEdit"></input></td>
-                              <td><input name="commentEdit" id="commentEdit"></input></td>
-                            </tr>
-                          </tbody>
-                        </table> -->
-                        <div class="container_btnEdit">
-                          <button class="btnEdit">Save</button>
-                        </div>
-
-                      </section>
-
-                      <div class="overlayEdit hiddenEdit"></div>
                     </tbody>
 
                     <tfoot>
@@ -179,6 +145,36 @@
                       </th>
                     </tfoot>
                   </table>
+
+                  <!-- modal for edit -->
+
+                  <section class="modalEdit hiddenEdit">
+
+                    <div class="flex">
+                      <button class="btn-closeEdit">x</button>
+                    </div>
+
+                    <table class="tbl_modalEdit">
+                      <thead>
+                        <tr>
+                          <th>Команда</th>
+                          <th>Коментар</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><input name="commandEdit" id="commandEdit"></input></td>
+                          <td><input name="commentEdit" id="commentEdit"></input></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="container_btnEdit">
+                      <button class="btnEdit">Зберегти</button>
+                    </div>
+
+                  </section>
+
+                  <div class="overlayEdit hiddenEdit"></div>
                 </div>
 
 
@@ -188,7 +184,10 @@
         </div>
       </div>
 
+
     </section>
+
+
 
     <!-- end training section -->
   </div>
