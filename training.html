@@ -116,14 +116,30 @@
                         <div class="flex">
                           <button class="btn-closeEdit">⨉</button>
                         </div>
-                        <div>
-                          <p>
-                            modal widow
-                          </p>
-                        </div>
+
+                        <p>Here should be the table</p>
+
+                        <!-- can't add table to modal window -->
+
+
+                        <!-- <table class="tbl_modalEdit">
+                          <thead>
+                            <tr>
+                              <th>Команда</th>
+                              <th>Коментар</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><input name="commandEdit" id="commandEdit"></input></td>
+                              <td><input name="commentEdit" id="commentEdit"></input></td>
+                            </tr>
+                          </tbody>
+                        </table> -->
                         <div class="container_btnEdit">
-                          <button class="btnEdit">Submit</button>
+                          <button class="btnEdit">Save</button>
                         </div>
+
                       </section>
 
                       <div class="overlayEdit hiddenEdit"></div>
@@ -131,6 +147,7 @@
 
                     <tfoot>
                       <th colspan="5">
+
                         <!-- modal window for add command button -->
                         <section class="modal hidden">
                           <button class="btn-close">x
@@ -150,29 +167,30 @@
                               </tr>
                             </tbody>
                           </table>
+
+                          <div class="container_btn">
+                            <button class="btn" id="saveBtn" onclick="getInputCommand()">Зберегти</button>
+                          </div>
+                        </section>
+                        <div class="overlay hidden" id="overlay"></div>
+                        <button class="btn_add btn-open" type="submit">
+                          Додати команду
+                        </button>
+                      </th>
+                    </tfoot>
+                  </table>
                 </div>
-                <div class="container_btn">
-                  <button class="btn" id="saveBtn" onclick="getInputCommand()">Зберегти</button>
-                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
-    <div class="overlay hidden" id="overlay"></div>
-    <button class="btn_add btn-open" type="submit">
-      Додати команду
-    </button></th>
-    </tfoot>
-    </table>
-  </div>
 
-
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-
-  </section>
-
-  <!-- end training section -->
+    <!-- end training section -->
   </div>
 
 

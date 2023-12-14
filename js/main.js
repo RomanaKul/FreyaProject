@@ -150,4 +150,4 @@ closeModalEditBtn.addEventListener("click", closeModalEdit);
 overlayEdit.addEventListener("click", closeModalEdit);
 saveEditBtn.addEventListener("click", closeModalEdit);
 
-// *** end of modal window for edit button ***
+// *** end of the modal window for edit button ***
