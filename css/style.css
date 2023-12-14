@@ -1140,7 +1140,7 @@ a:focus {
   outline: none;
 }
 
-/* modal window */
+/* modal window for add command */
 .training_section .modal {
   display: flex;
   flex-direction: column;
@@ -1172,12 +1172,6 @@ a:focus {
   border-radius: 70%;
   width: 30px;
   outline: none;
-}
-
-.training_section .modal p {
-  font-size: 0.9rem;
-  color: white;
-  text-align: center;
 }
 
 .training_section .container_btn {
@@ -1273,18 +1267,12 @@ a:focus {
   top: 10px;
   background-color: #fad932;
   color: #160c07;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
   border: none;
   border-radius: 70%;
   width: 30px;
   outline: none;
-}
-
-.training_section .modalEdit p {
-  font-size: 0.9rem;
-  color: white;
-  text-align: center;
 }
 
 .training_section .container_btnEdit {
@@ -1329,24 +1317,28 @@ a:focus {
 
 .training_section .tbl_modalEdit {
   height: 60%;
+  border: 1px solid white;
+  margin: 75px 0 40px 0;
 }
 
 .training_section .tbl_modalEdit tbody {
   background-color: #160c07;
   color: white;
   font-weight: lighter;
+  border: 1px solid white;
 }
 
 .training_section .tbl_modalEdit input {
   width: 100%;
   background-color: #36271f;
   color: white;
-  padding: 20px;
+  padding: 30px;
   font-size: 15px;
-  height: 70%;
+  height: 85%;
   text-align: left;
   outline: none;
   border: none;
+  margin: 20px 0 20px 0;
 }
 
 .training_section .tbl_modalEdit input:hover {
