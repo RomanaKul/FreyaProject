@@ -1225,11 +1225,12 @@ a:focus {
   background-color: #36271f;
   color: white;
   padding: 20px;
-  font-size: 15px;
+  font-size: 18px;
   height: 70%;
   text-align: left;
   outline: none;
   border: none;
+  letter-spacing: 1px;
 }
 
 .training_section .tbl_modal input:hover {
@@ -1333,12 +1334,13 @@ a:focus {
   background-color: #36271f;
   color: white;
   padding: 30px;
-  font-size: 15px;
+  font-size: 18px;
   height: 85%;
   text-align: left;
   outline: none;
   border: none;
   margin: 20px 0 20px 0;
+  letter-spacing: 1px;
 }
 
 .training_section .tbl_modalEdit input:hover {

@@ -1,3 +1,5 @@
+// *** modal window for adding command ***
+
 const modal = document.querySelector(".modal");
 const overlay = document.getElementById("overlay");
 const openModalBtn = document.querySelector(".btn-open");
@@ -45,7 +47,10 @@ const commands = [
     comment:
       'Інколи ще плутає з командою "Сидіти". Швидко розриває команду, не дочекавшись "Добре".',
   },
-  { name: "Дай лапу", comment: "Виконує добре. Навчити міняти лапу." },
+  {
+    name: "Дай лапу",
+    comment: "Виконує добре. Навчити міняти лапу.",
+  },
 ];
 
 const container = document.getElementById("tableElement");
@@ -113,6 +118,7 @@ function CommandElement(commandName, commandComment, index) {
 
   return this.el;
 }
+// *** end of the modal window for adding command ***
 
 // *** modal window for edit button ***
 
@@ -123,6 +129,8 @@ const overlayEdit = document.querySelector(".overlayEdit");
 const hiddenEdit = document.querySelector(".hiddenEdit");
 const closeModalEditBtn = document.querySelector(".btn-closeEdit");
 const saveEditBtn = document.querySelector(".btnEdit");
+const commandInput = document.querySelector("#commandEdit");
+const commentInput = document.querySelector("#commentEdit");
 
 const openModalEdit = function () {
   modalEdit.classList.remove("hiddenEdit");
@@ -149,5 +157,23 @@ const closeModalEdit = function () {
 closeModalEditBtn.addEventListener("click", closeModalEdit);
 overlayEdit.addEventListener("click", closeModalEdit);
 saveEditBtn.addEventListener("click", closeModalEdit);
+
+function inputCommandEdit() {
+  let arrayNames = commands.map((a) => a.name);
+  let arrayComments = commands.map((a) => a.comment);
+
+  for (let i = 0; i < button4.length; i++) {
+    if (button4[i]) {
+      commandInput.value = arrayNames[i];
+    }
+  }
+
+  for (let i = 0; i < button4.length; i++) {
+    if (button4[i]) {
+      commentInput.value = arrayComments[i];
+    }
+  }
+}
+inputCommandEdit();
 
 // *** end of the modal window for edit button ***
