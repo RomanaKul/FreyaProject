@@ -1,4 +1,4 @@
-// *** modal window for adding command ***
+// *** start of the modal for add button ***
 
 const modal = document.querySelector(".modal");
 const overlay = document.getElementById("overlay");
@@ -62,6 +62,7 @@ function renderCommands() {
     addCommandToTable(command, container, myIndex);
     myIndex = myIndex + 1;
   }
+  openModalEditWithBtn();
 }
 
 renderCommands();
@@ -118,11 +119,9 @@ function CommandElement(commandName, commandComment, index) {
 
   return this.el;
 }
-// *** end of the modal window for adding command ***
+// *** end of the modal for add button ***
 
-// *** modal window for edit button ***
-
-const button4 = document.getElementsByClassName("btn_edit");
+// *** start of the modal for edit button ***
 
 const modalEdit = document.querySelector(".modalEdit");
 const overlayEdit = document.querySelector(".overlayEdit");
@@ -132,21 +131,22 @@ const saveEditBtn = document.querySelector(".btnEdit");
 const commandInput = document.querySelector("#commandEdit");
 const commentInput = document.querySelector("#commentEdit");
 
-const openModalEdit = function () {
+function openModalEdit(i) {
   modalEdit.classList.remove("hiddenEdit");
   overlayEdit.classList.remove("hiddenEdit");
   saveEditBtn.classList.remove("hiddenEdit");
-};
+  inputCommandEdit(i);
+}
 
 function openModalEditWithBtn() {
+  const button4 = document.getElementsByClassName("btn_edit");
   for (let i = 0; i < button4.length; i++) {
     if (button4[i]) {
       let c = button4[i];
-      c.addEventListener("click", openModalEdit);
+      c.addEventListener("click", () => openModalEdit(i));
     }
   }
 }
-openModalEditWithBtn();
 
 const closeModalEdit = function () {
   modalEdit.classList.add("hiddenEdit");
@@ -158,22 +158,9 @@ closeModalEditBtn.addEventListener("click", closeModalEdit);
 overlayEdit.addEventListener("click", closeModalEdit);
 saveEditBtn.addEventListener("click", closeModalEdit);
 
-function inputCommandEdit() {
-  let arrayNames = commands.map((a) => a.name);
-  let arrayComments = commands.map((a) => a.comment);
-
-  for (let i = 0; i < button4.length; i++) {
-    if (button4[i]) {
-      commandInput.value = arrayNames[i];
-    }
-  }
-
-  for (let i = 0; i < button4.length; i++) {
-    if (button4[i]) {
-      commentInput.value = arrayComments[i];
-    }
-  }
+function inputCommandEdit(i) {
+  commandInput.value = commands[i].name;
+  commentInput.value = commands[i].comment;
 }
-inputCommandEdit();
 
-// *** end of the modal window for edit button ***
+// *** end of the modal for edit button ***
