@@ -122,6 +122,7 @@ function CommandElement(commandName, commandComment, index) {
 // *** end of the modal for add button ***
 
 // *** start of the modal for edit button ***
+let editingIndex;
 
 const modalEdit = document.querySelector(".modalEdit");
 const overlayEdit = document.querySelector(".overlayEdit");
@@ -132,6 +133,7 @@ const commandInput = document.querySelector("#commandEdit");
 const commentInput = document.querySelector("#commentEdit");
 
 function openModalEdit(i) {
+  editingIndex = i;
   modalEdit.classList.remove("hiddenEdit");
   overlayEdit.classList.remove("hiddenEdit");
   saveEditBtn.classList.remove("hiddenEdit");
@@ -164,3 +166,12 @@ function inputCommandEdit(i) {
 }
 
 // *** end of the modal for edit button ***
+
+// *** save edited text on the web. start ***
+
+function saveEditedCommand() {
+  commands[editingIndex].name = commandInput.value;
+  commands[editingIndex].comment = commentInput.value;
+
+  renderCommands();
+}
