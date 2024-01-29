@@ -63,6 +63,7 @@ function renderCommands() {
     myIndex = myIndex + 1;
   }
   openModalEditWithBtn();
+  deleteCommand();
 }
 
 renderCommands();
@@ -123,8 +124,6 @@ function CommandElement(commandName, commandComment, index) {
 // *** end of the modal for add button ***
 
 // *** start of the modal for edit button ***
-let editingIndex;
-
 const modalEdit = document.querySelector(".modalEdit");
 const overlayEdit = document.querySelector(".overlayEdit");
 const hiddenEdit = document.querySelector(".hiddenEdit");
@@ -132,6 +131,8 @@ const closeModalEditBtn = document.querySelector(".btn-closeEdit");
 const saveEditBtn = document.querySelector(".btnEdit");
 const commandInput = document.querySelector("#commandEdit");
 const commentInput = document.querySelector("#commentEdit");
+
+let editingIndex;
 
 function openModalEdit(i) {
   editingIndex = i;
@@ -182,4 +183,19 @@ function saveEditedCommand() {
 
 function saveToStorage() {
   localStorage.setItem("command", JSON.stringify(commands));
+}
+
+// *** delete button ***
+
+function deleteCommand() {
+  const deleteButtons = document.querySelectorAll(".btn_deleteCommand");
+
+  deleteButtons.forEach((deleteBtn, index) => {
+    deleteBtn.addEventListener("click", () => {
+      commands.splice(index, 1);
+
+      renderCommands();
+      saveToStorage();
+    });
+  });
 }
