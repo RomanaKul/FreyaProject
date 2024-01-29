@@ -36,7 +36,7 @@ saveInputBtn.addEventListener("click", clearInput);
 closeModalBtn.addEventListener("click", clearInput);
 overlay.addEventListener("click", clearInput);
 
-const commands = [
+let commands = JSON.parse(localStorage.getItem("command")) || [
   {
     name: "Сидіти",
     comment:
@@ -76,6 +76,7 @@ function getInputCommand() {
   };
   commands.push(input);
   renderCommands();
+  saveToStorage();
 }
 
 function addCommandToTable(command, container, index) {
@@ -174,4 +175,11 @@ function saveEditedCommand() {
   commands[editingIndex].comment = commentInput.value;
 
   renderCommands();
+  saveToStorage();
+}
+
+// *** local storage ***
+
+function saveToStorage() {
+  localStorage.setItem("command", JSON.stringify(commands));
 }
