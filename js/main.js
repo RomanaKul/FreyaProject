@@ -1,4 +1,6 @@
-// *** start of the modal for add button ***
+import { hello } from "./commands.js";
+
+hello();
 
 const modal = document.querySelector(".modal");
 const overlay = document.getElementById("overlay");
@@ -67,6 +69,7 @@ function renderCommands() {
 }
 
 renderCommands();
+saveInputBtn.addEventListener("click", getInputCommand);
 
 function getInputCommand() {
   let inputCommand = document.getElementById("command").value;
@@ -178,6 +181,7 @@ function saveEditedCommand() {
   renderCommands();
   saveToStorage();
 }
+saveEditBtn.addEventListener("click", saveEditedCommand);
 
 // *** local storage ***
 

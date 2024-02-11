@@ -135,7 +135,7 @@
                           </table>
 
                           <div class="container_btn">
-                            <button class="btn" id="saveBtn" onclick="getInputCommand()">Зберегти</button>
+                            <button class="btn" id="saveBtn">Зберегти</button>
                           </div>
                         </section>
                         <div class="overlay hidden" id="overlay"></div>
@@ -163,13 +163,13 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td><input name="commandEdit" id="commandEdit"></input></td>
+                          <td><input name="commandEdit" id="commandEdit" value="test"></input></td>
                           <td><input name="commentEdit" id="commentEdit"></input></td>
                         </tr>
                       </tbody>
                     </table>
                     <div class="container_btnEdit">
-                      <button class="btnEdit" onclick="saveEditedCommand()">Зберегти</button>
+                      <button class="btnEdit">Зберегти</button>
                     </div>
 
                   </section>
@@ -305,7 +305,7 @@
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
