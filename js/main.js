@@ -1,6 +1,5 @@
-import { hello } from "./commands.js";
-
-hello();
+import { commands, CommandElement } from "./commands.js";
+import { saveToStorage } from "./localStorage.js";
 
 const modal = document.querySelector(".modal");
 const overlay = document.getElementById("overlay");
@@ -34,27 +33,6 @@ const clearInput = function () {
   });
 };
 
-saveInputBtn.addEventListener("click", clearInput);
-closeModalBtn.addEventListener("click", clearInput);
-overlay.addEventListener("click", clearInput);
-
-let commands = JSON.parse(localStorage.getItem("command")) || [
-  {
-    name: "Сидіти",
-    comment:
-      'Потрібно закріпити, що команда скасовується лише після слова "Добре".',
-  },
-  {
-    name: "Лежати",
-    comment:
-      'Інколи ще плутає з командою "Сидіти". Швидко розриває команду, не дочекавшись "Добре".',
-  },
-  {
-    name: "Дай лапу",
-    comment: "Виконує добре. Навчити міняти лапу.",
-  },
-];
-
 const container = document.getElementById("tableElement");
 
 function renderCommands() {
@@ -69,11 +47,13 @@ function renderCommands() {
 }
 
 renderCommands();
+
 saveInputBtn.addEventListener("click", getInputCommand);
 
 function getInputCommand() {
   let inputCommand = document.getElementById("command").value;
   let inputComment = document.getElementById("comment").value;
+
   let input = {
     name: inputCommand,
     comment: inputComment,
@@ -83,53 +63,20 @@ function getInputCommand() {
   saveToStorage();
 }
 
+saveInputBtn.addEventListener("click", clearInput);
+closeModalBtn.addEventListener("click", clearInput);
+overlay.addEventListener("click", clearInput);
+
 function addCommandToTable(command, container, index) {
   const command1El = new CommandElement(command.name, command.comment, index);
   container.appendChild(command1El);
 }
 
-function CommandElement(commandName, commandComment, index) {
-  this.el = document.createElement("tr");
-
-  const td1 = document.createElement("td");
-  td1.innerText = index;
-  this.el.appendChild(td1);
-
-  const td2 = document.createElement("td");
-  td2.innerText = commandName;
-  this.el.appendChild(td2);
-
-  const td3 = document.createElement("td");
-  td3.innerText = commandComment;
-  this.el.appendChild(td3);
-
-  const td4 = document.createElement("td");
-  const button4 = document.createElement("button");
-  button4.classList.add("btn_edit");
-  button4.type = "button";
-  const img4 = document.createElement("img");
-  img4.src = "image/edit_btn.webp";
-  img4.alt = "edit";
-  button4.appendChild(img4);
-  td4.appendChild(button4);
-  this.el.appendChild(td4);
-
-  const td5 = document.createElement("td");
-  const button5 = document.createElement("button");
-  button5.classList.add("btn_deleteCommand");
-  button5.type = "button";
-  button5.innerText = "x";
-  td5.appendChild(button5);
-  this.el.appendChild(td5);
-
-  return this.el;
-}
 // *** end of the modal for add button ***
 
 // *** start of the modal for edit button ***
 const modalEdit = document.querySelector(".modalEdit");
 const overlayEdit = document.querySelector(".overlayEdit");
-const hiddenEdit = document.querySelector(".hiddenEdit");
 const closeModalEditBtn = document.querySelector(".btn-closeEdit");
 const saveEditBtn = document.querySelector(".btnEdit");
 const commandInput = document.querySelector("#commandEdit");
@@ -172,7 +119,7 @@ function inputCommandEdit(i) {
 
 // *** end of the modal for edit button ***
 
-// *** save edited text on the web. start ***
+// *** save edited text on the web ***
 
 function saveEditedCommand() {
   commands[editingIndex].name = commandInput.value;
@@ -182,12 +129,6 @@ function saveEditedCommand() {
   saveToStorage();
 }
 saveEditBtn.addEventListener("click", saveEditedCommand);
-
-// *** local storage ***
-
-function saveToStorage() {
-  localStorage.setItem("command", JSON.stringify(commands));
-}
 
 // *** delete button ***
 
