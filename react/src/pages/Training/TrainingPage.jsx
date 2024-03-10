@@ -19,7 +19,9 @@ export default function TrainingPage() {
         </Typography>
       </Box>
 
-      <Table />
+      <Box marginTop={10}>
+        <Table />
+      </Box>
     </Box>
   );
 }
