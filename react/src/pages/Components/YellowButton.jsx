@@ -7,7 +7,7 @@ const YellowButton = styled(Button)(({ theme }) => ({
   padding: "7px 15px",
   border: "3px solid",
   borderColor: theme.palette.primary.main,
-  fontSize: 16,
+  fontSize: 18,
   borderRadius: "10px",
   fontWeight: "bold",
   minWidth: 100,

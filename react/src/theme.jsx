@@ -7,11 +7,11 @@ export const theme = createTheme({
       light: "#1e1009",
     },
     secondary: {
-      main: "#ffff00",
+      main: "#ffe600",
     },
     text: {
       primary: "#160c07",
-      secondary: "#ffff00",
+      secondary: "#ffe600",
       white: "#ffffff",
     },
   },
@@ -27,7 +27,7 @@ export const theme = createTheme({
     h2: {
       fontSize: 35,
       fontWeight: "bold",
-      color: "#ffff00",
+      color: "#ffe600",
     },
     h3: {
       fontSize: 25,
