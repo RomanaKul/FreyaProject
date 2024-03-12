@@ -3,9 +3,9 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
-import { Stack, styled } from "@mui/material";
+import { Stack } from "@mui/material";
 import { theme } from "../theme";
+import { StyledLinkBig } from "./UI Kit/StyledLink";
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -13,19 +13,6 @@ export default function Navigation() {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-
-  const StyledLink = styled(Link)(({ theme }) => ({
-    color: theme.palette.text.white,
-    fontSize: 30,
-    [theme.breakpoints.down("md")]: {
-      fontSize: 25,
-    },
-    textDecoration: "none",
-    fontWeight: "bold",
-    "&:hover": {
-      color: theme.palette.text.secondary,
-    },
-  }));
 
   const DrawerList = (
     <Box
@@ -45,12 +32,12 @@ export default function Navigation() {
           minHeight: "100vh",
         }}
       >
-        <StyledLink to="/">Основна</StyledLink>
-        <StyledLink to="/blog">Блог</StyledLink>
-        <StyledLink to="/album">Альбом</StyledLink>
-        <StyledLink to="/training">Тренування</StyledLink>
-        <StyledLink to="/about">Про нас</StyledLink>
-        <StyledLink to="/shop">Магазин</StyledLink>
+        <StyledLinkBig to="/">Основна</StyledLinkBig>
+        <StyledLinkBig to="/blog">Блог</StyledLinkBig>
+        <StyledLinkBig to="/album">Альбом</StyledLinkBig>
+        <StyledLinkBig to="/training">Тренування</StyledLinkBig>
+        <StyledLinkBig to="/about">Про нас</StyledLinkBig>
+        <StyledLinkBig to="/shop">Магазин</StyledLinkBig>
       </Stack>
     </Box>
   );

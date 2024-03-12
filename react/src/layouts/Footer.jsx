@@ -9,16 +9,13 @@ import {
   YouTube,
   MusicNote,
 } from "@mui/icons-material";
+import { StyledLinkSmall } from "./UI Kit/StyledLink";
 
 export default function Footer() {
-  const StyledLink = styled(Link)(({ theme }) => ({
-    textDecoration: "none",
-    color: theme.palette.text.white,
+  const FooterTypography = styled(Typography)(({ theme }) => ({
     fontSize: 20,
-    "&:hover": {
-      color: theme.palette.text.secondary,
-    },
   }));
+
   return (
     <Box>
       <Typography
@@ -36,23 +33,23 @@ export default function Footer() {
               <Phone />
             </Stack>
             <Stack>
-              <Typography variant="body1">Україна</Typography>
-              <Typography variant="body1">demo@gmail.com</Typography>
-              <Typography variant="body1">+380 123456789</Typography>
+              <FooterTypography>Україна</FooterTypography>
+              <FooterTypography>demo@gmail.com</FooterTypography>
+              <FooterTypography>+380 123456789</FooterTypography>
             </Stack>
           </Stack>
         </Box>
         <Box>
           <Stack direction="row" spacing={10}>
             <Stack spacing={1}>
-              <StyledLink to="/">Основна</StyledLink>
-              <StyledLink to="/blog">Блог</StyledLink>
-              <StyledLink to="/album">Альбом</StyledLink>
+              <StyledLinkSmall to="/">Основна</StyledLinkSmall>
+              <StyledLinkSmall to="/blog">Блог</StyledLinkSmall>
+              <StyledLinkSmall to="/album">Альбом</StyledLinkSmall>
             </Stack>
             <Stack spacing={1}>
-              <StyledLink to="/training">Тренування</StyledLink>
-              <StyledLink to="/about">Про нас</StyledLink>
-              <StyledLink to="/shop">Магазин</StyledLink>
+              <StyledLinkSmall to="/training">Тренування</StyledLinkSmall>
+              <StyledLinkSmall to="/about">Про нас</StyledLinkSmall>
+              <StyledLinkSmall to="/shop">Магазин</StyledLinkSmall>
             </Stack>
           </Stack>
         </Box>

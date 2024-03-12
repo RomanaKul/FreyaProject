@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { DataGrid, gridClasses } from "@mui/x-data-grid";
 import { theme } from "../../theme";
-import YellowButton from "../Components/YellowButton";
+import ModalWindow from "./Modal";
 
 const columns = [
   {
@@ -78,7 +78,7 @@ const CustomFooter = () => (
       color: theme.palette.text.primary,
     }}
   >
-    <YellowButton>Додати команду</YellowButton>
+    <ModalWindow />
   </Box>
 );
 
