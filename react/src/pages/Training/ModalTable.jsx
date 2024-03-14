@@ -6,6 +6,7 @@ import {
   TableHead,
   styled,
   TextField,
+  TableRow,
 } from "@mui/material";
 import { theme } from "../../theme";
 
@@ -47,28 +48,32 @@ const ModalTable = () => {
             bgcolor: theme.palette.secondary.main,
           }}
         >
-          <StyledCell width={350}>Команда</StyledCell>
-          <StyledCell>Коментар</StyledCell>
+          <TableRow>
+            <StyledCell width={350}>Команда</StyledCell>
+            <StyledCell>Коментар</StyledCell>
+          </TableRow>
         </TableHead>
         <TableBody sx={{ bgcolor: theme.palette.primary.main }}>
-          <StyledCell>
-            <StyledInput
-              variant="standard"
-              InputProps={{
-                disableUnderline: true,
-              }}
-              multiline
-            />
-          </StyledCell>
-          <StyledCell>
-            <StyledInput
-              variant="standard"
-              InputProps={{
-                disableUnderline: true,
-              }}
-              multiline
-            />
-          </StyledCell>
+          <TableRow>
+            <StyledCell>
+              <StyledInput
+                variant="standard"
+                InputProps={{
+                  disableUnderline: true,
+                }}
+                multiline
+              />
+            </StyledCell>
+            <StyledCell>
+              <StyledInput
+                variant="standard"
+                InputProps={{
+                  disableUnderline: true,
+                }}
+                multiline
+              />
+            </StyledCell>
+          </TableRow>
         </TableBody>
       </Table>
     </TableContainer>

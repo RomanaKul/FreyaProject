@@ -20,6 +20,7 @@ export const theme = createTheme({
     fontFamily: "Raleway, Arial",
     allVariants: {
       color: "#ffffff",
+      fontSize: 20,
     },
     h1: {
       fontSize: 40,

@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Stack } from "@mui/material";
 import { theme } from "../theme";
-import { StyledLinkBig } from "./UI Kit/StyledLink";
+import { StyledLinkBig } from "./ui_kit/StyledLink";
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -14,7 +14,7 @@ export default function Navigation() {
     setOpen(newOpen);
   };
 
-  const DrawerList = (
+  const DrawerList = () => (
     <Box
       sx={{
         width: 300,
@@ -62,7 +62,7 @@ export default function Navigation() {
       </Box>
 
       <Drawer open={open} onClose={toggleDrawer(false)} sx={{ height: "100%" }}>
-        {DrawerList}
+        <DrawerList />
       </Drawer>
     </div>
   );
