@@ -2,7 +2,7 @@ import { theme } from "../../theme";
 import { Box, IconButton } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Close";
 
-export const CloseButton = () => {
+export const CloseButton = ({ onClick }) => {
   return (
     <Box
       sx={{
@@ -20,6 +20,7 @@ export const CloseButton = () => {
             backgroundColor: theme.palette.primary.main,
           },
         }}
+        onClick={onClick}
       >
         <CancelIcon fontSize="small" />
       </IconButton>

@@ -22,10 +22,25 @@ const StyledBox = styled(Box)(({ theme }) => ({
   alignItems: "center",
 }));
 
-export default function ModalWindow() {
+export default function ModalWindow({ rows, setRows }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleSave = () => {
+    const newRow = {
+      id: 4,
+      command: "Змійка",
+      comment: "Вивчили",
+      edit: "Edit",
+      delete: "Delete",
+    };
+
+    const newRows = rows.slice();
+    newRows.push(newRow);
+
+    setRows(newRows);
+  };
 
   return (
     <div>
@@ -37,10 +52,10 @@ export default function ModalWindow() {
         aria-describedby="modal-modal-description"
       >
         <StyledBox>
-          <CloseButton />
+          <CloseButton onClick={handleClose} />
           <ModalTable />
 
-          <YellowButton>Зберегти</YellowButton>
+          <YellowButton onClick={handleSave}>Зберегти</YellowButton>
         </StyledBox>
       </Modal>
     </div>

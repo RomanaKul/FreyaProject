@@ -9,7 +9,7 @@ import {
   YouTube,
   MusicNote,
 } from "@mui/icons-material";
-import { StyledLinkSmall } from "./UI Kit/StyledLink";
+import { StyledLinkSmall } from "./ui_kit/StyledLink";
 
 export default function Footer() {
   const FooterTypography = styled(Typography)(({ theme }) => ({

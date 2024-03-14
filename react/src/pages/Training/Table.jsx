@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { DataGrid, gridClasses } from "@mui/x-data-grid";
 import { theme } from "../../theme";
 import ModalWindow from "./Modal";
+import { useState } from "react";
 
 const columns = [
   {
@@ -41,9 +42,9 @@ const columns = [
   },
 ];
 
-const rows = [
+const initialRows = [
   {
-    id: "1",
+    id: 1,
     command: "Сидіти",
     comment:
       'Потрібно закріпити, що команда скасовується лише після слова "Добре".',
@@ -51,7 +52,7 @@ const rows = [
     delete: "Delete",
   },
   {
-    id: "2",
+    id: 2,
     command: "Лежати",
     comment:
       'Інколи ще плутає з командою "Сидіти". Швидко розриває команду, не дочекавшись "Добре".',
@@ -59,7 +60,7 @@ const rows = [
     delete: "Delete",
   },
   {
-    id: "3",
+    id: 3,
     command: "Дай лапу",
     comment: "Виконує добре. Навчити міняти лапу.",
     edit: "Edit",
@@ -67,7 +68,7 @@ const rows = [
   },
 ];
 
-const CustomFooter = () => (
+const CustomFooter = ({ rows, setRows }) => (
   <Box
     sx={{
       display: "flex",
@@ -78,11 +79,13 @@ const CustomFooter = () => (
       color: theme.palette.text.primary,
     }}
   >
-    <ModalWindow />
+    <ModalWindow rows={rows} setRows={setRows} />
   </Box>
 );
 
 export default function Table() {
+  const [rows, setRows] = useState(initialRows);
+
   return (
     <>
       <Box>
@@ -93,7 +96,7 @@ export default function Table() {
           columns={columns}
           rows={rows}
           components={{
-            Footer: CustomFooter,
+            Footer: () => <CustomFooter rows={rows} setRows={setRows} />,
           }}
           sx={{
             fontSize: 18,
