@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { DataGrid, gridClasses } from "@mui/x-data-grid";
 import { theme } from "../../theme";
 import ModalWindow from "./ModalWindow";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const columns = [
   {
@@ -42,32 +42,6 @@ const columns = [
   },
 ];
 
-const initialRows = [
-  {
-    id: 1,
-    command: "Сидіти",
-    comment:
-      'Потрібно закріпити, що команда скасовується лише після слова "Добре".',
-    edit: "Edit",
-    delete: "Delete",
-  },
-  {
-    id: 2,
-    command: "Лежати",
-    comment:
-      'Інколи ще плутає з командою "Сидіти". Швидко розриває команду, не дочекавшись "Добре".',
-    edit: "Edit",
-    delete: "Delete",
-  },
-  {
-    id: 3,
-    command: "Дай лапу",
-    comment: "Виконує добре. Навчити міняти лапу.",
-    edit: "Edit",
-    delete: "Delete",
-  },
-];
-
 const CustomFooter = ({ rows, setRows }) => (
   <Box
     sx={{
@@ -84,7 +58,15 @@ const CustomFooter = ({ rows, setRows }) => (
 );
 
 export default function Table() {
-  const [rows, setRows] = useState(initialRows);
+  const [rows, setRows] = useState(() => {
+    const localValue = localStorage.getItem("rows");
+    if (localValue == null) return [];
+    return JSON.parse(localValue);
+  });
+
+  useEffect(() => {
+    localStorage.setItem("rows", JSON.stringify(rows));
+  }, [rows]);
 
   return (
     <>
