@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { DataGrid, gridClasses } from "@mui/x-data-grid";
 import { theme } from "../../theme";
-import ModalWindow from "./Modal";
+import ModalWindow from "./ModalWindow";
 import { useState } from "react";
 
 const columns = [

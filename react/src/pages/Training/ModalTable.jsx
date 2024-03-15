@@ -33,7 +33,7 @@ const StyledInput = styled(TextField)(({ theme }) => ({
   },
 }));
 
-const ModalTable = () => {
+const ModalTable = ({ command, setCommand, comment, setComment }) => {
   return (
     <TableContainer
       sx={{
@@ -62,6 +62,8 @@ const ModalTable = () => {
                   disableUnderline: true,
                 }}
                 multiline
+                value={command}
+                onChange={(e) => setCommand(e.target.value)}
               />
             </StyledCell>
             <StyledCell>
@@ -71,6 +73,8 @@ const ModalTable = () => {
                   disableUnderline: true,
                 }}
                 multiline
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
               />
             </StyledCell>
           </TableRow>
