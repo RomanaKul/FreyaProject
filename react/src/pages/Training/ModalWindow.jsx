@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Box, Modal, styled } from "@mui/material";
+import { Box, IconButton, Modal, styled } from "@mui/material";
 import YellowButton from "../Components/YellowButton";
 import { CloseButton } from "../Components/CloseButton";
 import ModalTable from "./ModalTable";
+import { DeleteButton } from "../Components/DeleteButton";
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: "absolute",
@@ -29,13 +30,17 @@ export default function ModalWindow({ rows, setRows }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const handleDelete = () => {
+    console.log("hello");
+  };
+
   const handleSave = () => {
     const newRow = {
       id: rows.length + 1,
       command: command,
       comment: comment,
       edit: "Edit",
-      delete: "Delete",
+      delete: <DeleteButton onClick={handleDelete} />,
     };
 
     const newRows = rows.slice();
