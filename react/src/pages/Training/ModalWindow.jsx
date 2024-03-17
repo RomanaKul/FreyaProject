@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Box, IconButton, Modal, styled } from "@mui/material";
+import { Box, Modal, styled } from "@mui/material";
 import YellowButton from "../Components/YellowButton";
 import { CloseButton } from "../Components/CloseButton";
 import ModalTable from "./ModalTable";
-import { DeleteButton } from "../Components/DeleteButton";
 
 const StyledBox = styled(Box)(({ theme }) => ({
   position: "absolute",

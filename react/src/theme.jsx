@@ -30,6 +30,7 @@ export const theme = createTheme({
       fontSize: 35,
       fontWeight: "bold",
       color: "#ffe600",
+      marginBottom: 30,
     },
     h3: {
       fontSize: 25,
@@ -37,6 +38,12 @@ export const theme = createTheme({
 
     body1: {
       fontSize: 20,
+    },
+
+    body2: {
+      fontSize: 20,
+      color: "#160c07",
+      fontWeight: "bold",
     },
   },
 });

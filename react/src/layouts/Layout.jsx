@@ -12,10 +12,6 @@ export default function Layout() {
       <Box
         sx={{
           flexGrow: 1,
-          padding: 15,
-          [theme.breakpoints.down("md")]: {
-            padding: 5,
-          },
         }}
       >
         <Outlet />
