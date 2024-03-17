@@ -3,44 +3,8 @@ import { DataGrid, gridClasses } from "@mui/x-data-grid";
 import { theme } from "../../theme";
 import ModalWindow from "./ModalWindow";
 import { useState, useEffect } from "react";
-
-const columns = [
-  {
-    field: "id",
-    width: 70,
-    headerAlign: "center",
-    align: "center",
-    renderHeader: () => <div style={{ fontWeight: "bold" }}>№</div>,
-  },
-  {
-    field: "command",
-    width: 150,
-    headerAlign: "center",
-    align: "center",
-    renderHeader: () => <div style={{ fontWeight: "bold" }}>Команда</div>,
-  },
-  {
-    field: "comment",
-    width: 740,
-    headerAlign: "center",
-    renderHeader: () => <div style={{ fontWeight: "bold" }}>Коментар</div>,
-  },
-  {
-    field: "edit",
-    width: 120,
-    headerAlign: "center",
-    align: "center",
-    renderHeader: () => <div style={{ fontWeight: "bold" }}>Редагувати</div>,
-  },
-  {
-    field: "delete",
-    width: 120,
-    headerAlign: "center",
-    align: "center",
-
-    renderHeader: () => <div style={{ fontWeight: "bold" }}>Видалити</div>,
-  },
-];
+import { DeleteButton } from "../Components/DeleteButton";
+import { EditButton } from "../Components/EditButton";
 
 const CustomFooter = ({ rows, setRows }) => (
   <Box
@@ -67,6 +31,55 @@ export default function Table() {
   useEffect(() => {
     localStorage.setItem("rows", JSON.stringify(rows));
   }, [rows]);
+
+  const deleteRow = (id) => {
+    const updatedRows = rows.filter((row) => row.id !== id);
+    setRows(updatedRows);
+  };
+
+  const columns = [
+    {
+      field: "id",
+      width: 70,
+      headerAlign: "center",
+      align: "center",
+      renderHeader: () => <div style={{ fontWeight: "bold" }}>№</div>,
+      renderCell: (params) => params.api.getAllRowIds().indexOf(params.id) + 1,
+    },
+    {
+      field: "command",
+      width: 150,
+      headerAlign: "center",
+      align: "center",
+      renderHeader: () => <div style={{ fontWeight: "bold" }}>Команда</div>,
+    },
+    {
+      field: "comment",
+      width: 740,
+      headerAlign: "center",
+      renderHeader: () => <div style={{ fontWeight: "bold" }}>Коментар</div>,
+    },
+    {
+      field: "edit",
+      width: 120,
+      headerAlign: "center",
+      align: "center",
+      renderHeader: () => <div style={{ fontWeight: "bold" }}>Редагувати</div>,
+      renderCell: () => <EditButton onClick={() => console.log("Hello")} />,
+    },
+    {
+      field: "delete",
+      width: 120,
+      headerAlign: "center",
+      align: "center",
+
+      renderHeader: () => <div style={{ fontWeight: "bold" }}>Видалити</div>,
+
+      renderCell: (params) => (
+        <DeleteButton onClick={() => deleteRow(params.row.id)} />
+      ),
+    },
+  ];
 
   return (
     <>

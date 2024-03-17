@@ -30,17 +30,11 @@ export default function ModalWindow({ rows, setRows }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleDelete = () => {
-    console.log("hello");
-  };
-
   const handleSave = () => {
     const newRow = {
       id: rows.length + 1,
       command: command,
       comment: comment,
-      edit: "Edit",
-      delete: <DeleteButton onClick={handleDelete} />,
     };
 
     const newRows = rows.slice();
