@@ -12,10 +12,6 @@ import {
 import { StyledLinkSmall } from "./ui_kit/StyledLink";
 
 export default function Footer() {
-  const FooterTypography = styled(Typography)(({ theme }) => ({
-    fontSize: 20,
-  }));
-
   return (
     <Box>
       <Typography
@@ -33,9 +29,9 @@ export default function Footer() {
               <Phone />
             </Stack>
             <Stack>
-              <FooterTypography>Україна</FooterTypography>
-              <FooterTypography>demo@gmail.com</FooterTypography>
-              <FooterTypography>+380 123456789</FooterTypography>
+              <Typography>Україна</Typography>
+              <Typography>demo@gmail.com</Typography>
+              <Typography>+380 123456789</Typography>
             </Stack>
           </Stack>
         </Box>
