@@ -1,37 +1,13 @@
 import {
   Table,
   TableBody,
-  TableCell,
   TableContainer,
   TableHead,
-  styled,
-  TextField,
   TableRow,
 } from "@mui/material";
 import { theme } from "../../theme";
-
-const StyledCell = styled(TableCell)(({ theme }) => ({
-  fontSize: "18px",
-  fontWeight: "bold",
-  textAlign: "center",
-  color: theme.palette.primary.main,
-}));
-
-const StyledInput = styled(TextField)(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.light,
-  width: "100%",
-  margin: 7,
-  padding: 15,
-  outline: "none",
-  border: "2px solid",
-  borderColor: theme.palette.secondary.main,
-
-  "& .MuiInputBase-input": {
-    color: theme.palette.text.white,
-    outline: "none",
-    border: "none",
-  },
-}));
+import { StyledCell } from "../Components/StyledCell";
+import { StyledInput } from "../Components/StyledInput";
 
 const ModalTable = ({ command, setCommand, comment, setComment }) => {
   return (

@@ -5,6 +5,7 @@ import ModalWindow from "./ModalWindow";
 import { useState, useEffect } from "react";
 import { DeleteButton } from "../Components/DeleteButton";
 import { EditButton } from "../Components/EditButton";
+import EditWindow from "./EditWindow";
 
 const CustomFooter = ({ rows, setRows }) => (
   <Box
@@ -31,6 +32,16 @@ export default function Table() {
   useEffect(() => {
     localStorage.setItem("rows", JSON.stringify(rows));
   }, [rows]);
+
+  const [openEditWindow, setOpenEditWindow] = useState(false);
+
+  const handleEdit = (id) => {
+    setOpenEditWindow(true);
+  };
+
+  const handleCloseEditWindow = () => {
+    setOpenEditWindow(false);
+  };
 
   const deleteRow = (id) => {
     const updatedRows = rows.filter((row) => row.id !== id);
@@ -65,7 +76,12 @@ export default function Table() {
       headerAlign: "center",
       align: "center",
       renderHeader: () => <div style={{ fontWeight: "bold" }}>Редагувати</div>,
-      renderCell: () => <EditButton onClick={() => console.log("Hello")} />,
+      renderCell: () => (
+        <>
+          <EditButton onClick={() => handleEdit()} />
+          <EditWindow open={openEditWindow} onClose={handleCloseEditWindow} />
+        </>
+      ),
     },
     {
       field: "delete",
@@ -90,6 +106,7 @@ export default function Table() {
         <DataGrid
           columns={columns}
           rows={rows}
+          editMode="row"
           components={{
             Footer: () => <CustomFooter rows={rows} setRows={setRows} />,
           }}

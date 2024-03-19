@@ -1,25 +1,9 @@
 import { useState } from "react";
-import { Box, Modal, styled } from "@mui/material";
+import { Modal } from "@mui/material";
 import YellowButton from "../Components/YellowButton";
 import { CloseButton } from "../Components/CloseButton";
 import ModalTable from "./ModalTable";
-
-const StyledBox = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "80%",
-  backgroundColor: theme.palette.secondary.light,
-  border: "2px solid ",
-  borderRadius: "10px",
-  borderColor: theme.palette.secondary.main,
-  padding: "30px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-}));
+import { StyledBox } from "../Components/StyledBox";
 
 export default function ModalWindow({ rows, setRows }) {
   const [open, setOpen] = useState(false);
