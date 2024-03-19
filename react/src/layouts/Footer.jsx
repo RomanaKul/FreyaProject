@@ -9,7 +9,7 @@ import {
   YouTube,
   MusicNote,
 } from "@mui/icons-material";
-import { StyledLinkSmall } from "./ui_kit/StyledLink";
+import { StyledLink } from "./ui_kit/StyledLink";
 
 export default function Footer() {
   return (
@@ -38,14 +38,14 @@ export default function Footer() {
         <Box>
           <Stack direction="row" spacing={10}>
             <Stack spacing={1}>
-              <StyledLinkSmall to="/">Основна</StyledLinkSmall>
-              <StyledLinkSmall to="/blog">Блог</StyledLinkSmall>
-              <StyledLinkSmall to="/album">Альбом</StyledLinkSmall>
+              <StyledLink to="/">Основна</StyledLink>
+              <StyledLink to="/blog">Блог</StyledLink>
+              <StyledLink to="/album">Альбом</StyledLink>
             </Stack>
             <Stack spacing={1}>
-              <StyledLinkSmall to="/training">Тренування</StyledLinkSmall>
-              <StyledLinkSmall to="/about">Про нас</StyledLinkSmall>
-              <StyledLinkSmall to="/shop">Магазин</StyledLinkSmall>
+              <StyledLink to="/training">Тренування</StyledLink>
+              <StyledLink to="/about">Про нас</StyledLink>
+              <StyledLink to="/shop">Магазин</StyledLink>
             </Stack>
           </Stack>
         </Box>

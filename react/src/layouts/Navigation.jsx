@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Stack } from "@mui/material";
 import { theme } from "../theme";
-import { StyledLinkBig } from "./ui_kit/StyledLink";
+import { StyledLinkNav } from "./ui_kit/StyledLink";
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -32,12 +32,12 @@ export default function Navigation() {
           minHeight: "100vh",
         }}
       >
-        <StyledLinkBig to="/">Основна</StyledLinkBig>
-        <StyledLinkBig to="/blog">Блог</StyledLinkBig>
-        <StyledLinkBig to="/album">Альбом</StyledLinkBig>
-        <StyledLinkBig to="/training">Тренування</StyledLinkBig>
-        <StyledLinkBig to="/about">Про нас</StyledLinkBig>
-        <StyledLinkBig to="/shop">Магазин</StyledLinkBig>
+        <StyledLinkNav to="/">Основна</StyledLinkNav>
+        <StyledLinkNav to="/blog">Блог</StyledLinkNav>
+        <StyledLinkNav to="/album">Альбом</StyledLinkNav>
+        <StyledLinkNav to="/training">Тренування</StyledLinkNav>
+        <StyledLinkNav to="/about">Про нас</StyledLinkNav>
+        <StyledLinkNav to="/shop">Магазин</StyledLinkNav>
       </Stack>
     </Box>
   );

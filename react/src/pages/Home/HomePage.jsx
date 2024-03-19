@@ -2,8 +2,7 @@ import { Box, Stack, Typography, styled } from "@mui/material";
 import { theme } from "../../theme";
 import MediaCard from "../Components/MediaCard";
 import YellowButton from "../Components/YellowButton";
-import { Link } from "react-router-dom";
-import { StyledLinkSmall } from "../../layouts/ui_kit/StyledLink";
+import { StyledLink } from "../../layouts/ui_kit/StyledLink";
 
 export default function HomePage() {
   const StyledTypography = styled(Typography)(({ theme }) => ({
@@ -84,12 +83,9 @@ export default function HomePage() {
           />
         </Stack>
         <YellowButton sx={{ margin: 5 }}>
-          <StyledLinkSmall
-            sx={{ color: theme.palette.primary.main }}
-            to="/blog"
-          >
+          <StyledLink sx={{ color: theme.palette.primary.main }} to="/blog">
             Дивитись більше
-          </StyledLinkSmall>
+          </StyledLink>
         </YellowButton>
       </Box>
     </>
