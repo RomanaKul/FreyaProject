@@ -23,6 +23,7 @@ const CustomFooter = ({ rows, setRows }) => (
 );
 
 export default function Table() {
+  const [currentRow, setCurrentRow] = useState(0);
   const [rows, setRows] = useState(() => {
     const localValue = localStorage.getItem("rows");
     if (localValue == null) return [];
@@ -35,7 +36,8 @@ export default function Table() {
 
   const [openEditWindow, setOpenEditWindow] = useState(false);
 
-  const handleEdit = (id) => {
+  const handleEdit = (rowId) => {
+    setCurrentRow(rowId);
     setOpenEditWindow(true);
   };
 
@@ -76,10 +78,9 @@ export default function Table() {
       headerAlign: "center",
       align: "center",
       renderHeader: () => <div style={{ fontWeight: "bold" }}>Редагувати</div>,
-      renderCell: () => (
+      renderCell: (params) => (
         <>
-          <EditButton onClick={() => handleEdit()} />
-          <EditWindow open={openEditWindow} onClose={handleCloseEditWindow} />
+          <EditButton onClick={() => handleEdit(params.row.id)} />
         </>
       ),
     },
@@ -139,6 +140,13 @@ export default function Table() {
           }
           getRowHeight={() => "auto"}
           hideFooterPagination
+        />
+        <EditWindow
+          rows={rows}
+          open={openEditWindow}
+          onClose={handleCloseEditWindow}
+          currentRowId={currentRow}
+          setRows={setRows}
         />
       </Box>
     </>
