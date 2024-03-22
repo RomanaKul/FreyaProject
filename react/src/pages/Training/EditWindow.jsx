@@ -13,8 +13,39 @@ import { CloseButton } from "../Components/CloseButton";
 import YellowButton from "../Components/YellowButton";
 import { StyledInput } from "../Components/StyledInput";
 import { StyledCell } from "../Components/StyledCell";
+import { useState } from "react";
 
-export default function EditWindow({ open, onClose }) {
+export default function EditWindow({
+  rows,
+  open,
+  onClose,
+  currentRowId,
+  setRows,
+}) {
+  const [currentRow, setCurrentRow] = useState(rows[currentRowId - 1]);
+
+  if (!currentRow) {
+    return;
+  }
+
+  const updateRow = () => {
+    const newRows = rows.slice();
+    newRows[currentRowId - 1] = currentRow;
+    setRows(newRows);
+    onClose();
+  };
+
+  const updateCommand = (newValue) => {
+    const newRow = { ...currentRow };
+    newRow.command = newValue;
+    setCurrentRow(newRow);
+  };
+  const updateComment = (newValue) => {
+    const newRow = { ...currentRow };
+    newRow.comment = newValue;
+    setCurrentRow(newRow);
+  };
+
   return (
     <Box
       sx={{
@@ -56,6 +87,8 @@ export default function EditWindow({ open, onClose }) {
                         disableUnderline: true,
                       }}
                       multiline
+                      value={currentRow.command}
+                      onChange={(event) => updateCommand(event.target.value)}
                     />
                   </StyledCell>
                   <StyledCell>
@@ -65,13 +98,15 @@ export default function EditWindow({ open, onClose }) {
                         disableUnderline: true,
                       }}
                       multiline
+                      value={currentRow.comment}
+                      onChange={(event) => updateComment(event.target.value)}
                     />
                   </StyledCell>
                 </TableRow>
               </TableBody>
             </Table>
           </TableContainer>
-          <YellowButton>Зберегти</YellowButton>
+          <YellowButton onClick={updateRow}>Зберегти</YellowButton>
         </StyledBox>
       </Modal>
     </Box>
