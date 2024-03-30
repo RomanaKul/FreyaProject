@@ -147,6 +147,7 @@ export default function Table() {
           onClose={handleCloseEditWindow}
           currentRowId={currentRow}
           setRows={setRows}
+          key={currentRow}
         />
       </Box>
     </>
