@@ -1,11 +1,13 @@
 import { Box, Stack, Typography, styled } from "@mui/material";
 import { theme } from "../../theme";
-import MediaCard from "../Components/MediaCard";
-import YellowButton from "../Components/YellowButton";
+import YellowButton from "../../components/YellowButton";
 import { StyledLink } from "../../layouts/ui_kit/StyledLink";
+import MediaCard from "../../components/MediaCard";
+import Slider from "../../components/Slider";
+import ArticlesList from "../../data/ArticlesList";
 
 export default function HomePage() {
-  const StyledTypography = styled(Typography)(({ theme }) => ({
+  const StyledTypography = styled(Typography)(() => ({
     paddingBottom: "20px",
   }));
 
@@ -27,8 +29,8 @@ export default function HomePage() {
           <StyledTypography>
             Я приїхала до мами і тата, коли мені було 2 місяці, і відтоді
             розважаю їх, як тільки можу. Я стараюсь не давати їм сумувати ні
-            хвилинки, а тому в мене завжди є напоготові м'ячик, - я то знаю, що
-            це їхня улюблена іграшка!
+            хвилинки, а тому в мене завжди є напоготові м&apos;ячик, - я то
+            знаю, що це їхня улюблена іграшка!
           </StyledTypography>
           <StyledTypography>
             Народилась я на фермі, через що мені чужі всі ці міські звичаї. Не
@@ -56,32 +58,20 @@ export default function HomePage() {
       />
       <Box textAlign={"center"}>
         <Typography variant="h2">Нещодавні статті:</Typography>
-        <Stack direction="row" spacing={5} justifyContent={"space-evenly"}>
-          <MediaCard
-            image="../images/Home.jpg"
-            title="Тут назва статті"
-            content="Я приїхала до мами і тата, коли мені було 2 місяці, і відтоді
-            розважаю їх, як тільки можу. Я стараюсь не давати їм сумувати ні
-            хвилинки, а тому в мене завжди є напоготові м'ячик, - я то знаю, що
-            це їхня улюблена іграшка!"
-          />
-          <MediaCard
-            image="../images/Home.jpg"
-            title="Тут назва статті"
-            content="Я приїхала до мами і тата, коли мені було 2 місяці, і відтоді
-            розважаю їх, як тільки можу. Я стараюсь не давати їм сумувати ні
-            хвилинки, а тому в мене завжди є напоготові м'ячик, - я то знаю, що
-            це їхня улюблена іграшка!"
-          />
-          <MediaCard
-            image="../images/Home.jpg"
-            title="Тут назва статті"
-            content="Я приїхала до мами і тата, коли мені було 2 місяці, і відтоді
-            розважаю їх, як тільки можу. Я стараюсь не давати їм сумувати ні
-            хвилинки, а тому в мене завжди є напоготові м'ячик, - я то знаю, що
-            це їхня улюблена іграшка!"
-          />
-        </Stack>
+        <Slider>
+          {ArticlesList.map((article) => {
+            return (
+              <>
+                <MediaCard
+                  key={article.key}
+                  image={article.image}
+                  title={article.title}
+                  content={article.content}
+                />
+              </>
+            );
+          })}
+        </Slider>
         <YellowButton sx={{ margin: 5 }}>
           <StyledLink sx={{ color: theme.palette.primary.main }} to="/blog">
             Дивитись більше

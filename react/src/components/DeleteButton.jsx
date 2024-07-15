@@ -1,11 +1,11 @@
 import { IconButton } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
-import { theme } from "../../theme";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { theme } from "../theme";
 
-export const EditButton = ({ onClick }) => {
+export const DeleteButton = ({ onClick }) => {
   return (
     <IconButton onClick={onClick}>
-      <EditIcon
+      <DeleteForeverIcon
         sx={{
           color: theme.palette.text.white,
           cursor: "pointer",

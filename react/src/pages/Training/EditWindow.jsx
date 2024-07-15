@@ -8,12 +8,12 @@ import {
   TableRow,
 } from "@mui/material";
 import { theme } from "../../theme";
-import { StyledBox } from "../Components/StyledBox";
-import { CloseButton } from "../Components/CloseButton";
-import YellowButton from "../Components/YellowButton";
-import { StyledInput } from "../Components/StyledInput";
-import { StyledCell } from "../Components/StyledCell";
 import { useState } from "react";
+import YellowButton from "../../components/YellowButton";
+import { CloseButton } from "../../components/CloseButton";
+import { StyledBox } from "../../components/StyledBox";
+import { StyledCell } from "../../components/StyledCell";
+import { StyledInput } from "../../components/StyledInput";
 
 export default function EditWindow({
   rows,

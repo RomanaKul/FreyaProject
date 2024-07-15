@@ -6,8 +6,8 @@ import {
   TableRow,
 } from "@mui/material";
 import { theme } from "../../theme";
-import { StyledCell } from "../Components/StyledCell";
-import { StyledInput } from "../Components/StyledInput";
+import { StyledCell } from "../../components/StyledCell";
+import { StyledInput } from "../../components/StyledInput";
 
 const ModalTable = ({ command, setCommand, comment, setComment }) => {
   return (

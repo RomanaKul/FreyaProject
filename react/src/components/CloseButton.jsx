@@ -1,6 +1,6 @@
-import { theme } from "../../theme";
 import { Box, IconButton } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Close";
+import { theme } from "../theme";
 
 export const CloseButton = ({ onClick }) => {
   return (

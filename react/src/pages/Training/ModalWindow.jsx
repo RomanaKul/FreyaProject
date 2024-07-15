@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Modal } from "@mui/material";
-import YellowButton from "../Components/YellowButton";
-import { CloseButton } from "../Components/CloseButton";
 import ModalTable from "./ModalTable";
-import { StyledBox } from "../Components/StyledBox";
+import YellowButton from "../../components/YellowButton";
+import { CloseButton } from "../../components/CloseButton";
+import { StyledBox } from "../../components/StyledBox";
 
 export default function ModalWindow({ rows, setRows }) {
   const [open, setOpen] = useState(false);
