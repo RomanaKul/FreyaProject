@@ -5,7 +5,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import { theme } from "../../theme";
+import { theme } from "../theme";
 import YellowButton from "./YellowButton";
 
 export default function MediaCard({ image, title, content }) {

@@ -3,9 +3,9 @@ import { DataGrid, gridClasses } from "@mui/x-data-grid";
 import { theme } from "../../theme";
 import ModalWindow from "./ModalWindow";
 import { useState, useEffect } from "react";
-import { DeleteButton } from "../Components/DeleteButton";
-import { EditButton } from "../Components/EditButton";
 import EditWindow from "./EditWindow";
+import { DeleteButton } from "../../components/DeleteButton";
+import { EditButton } from "../../components/EditButton";
 
 const CustomFooter = ({ rows, setRows }) => (
   <Box
