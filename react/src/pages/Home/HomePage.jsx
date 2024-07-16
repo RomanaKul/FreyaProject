@@ -64,14 +64,12 @@ export default function HomePage() {
         <Slider currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}>
           {ArticlesList.map((article) => {
             return (
-              <>
-                <MediaCard
-                  key={article.key}
-                  image={article.image}
-                  title={article.title}
-                  content={article.content}
-                />
-              </>
+              <MediaCard
+                key={article.key}
+                image={article.image}
+                title={article.title}
+                content={article.content}
+              />
             );
           })}
         </Slider>
