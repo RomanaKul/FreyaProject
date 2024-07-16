@@ -1,15 +1,30 @@
 import { Stack } from "@mui/material";
 import RadioButtons from "./RadioButtons";
+import PropTypes from "prop-types";
 
-function Slider({ children }) {
+export default function Slider({ children, currentIndex, setCurrentIndex }) {
+  const visibleChildren = children.slice(currentIndex, currentIndex + 3);
+  let totalSlides;
+  children.length <= 3
+    ? (totalSlides = 0)
+    : (totalSlides = children.length - 2);
+
   return (
     <>
       <Stack direction="row" spacing={5} justifyContent={"space-evenly"}>
-        {children}
+        {visibleChildren}
       </Stack>
-      <RadioButtons />
+      <RadioButtons
+        count={totalSlides}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+      />
     </>
   );
 }
 
-export default Slider;
+Slider.propTypes = {
+  children: PropTypes.node,
+  currentIndex: PropTypes.number,
+  setCurrentIndex: PropTypes.func,
+};

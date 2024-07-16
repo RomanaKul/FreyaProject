@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Box, Stack, Typography, styled } from "@mui/material";
 import { theme } from "../../theme";
 import YellowButton from "../../components/YellowButton";
@@ -7,6 +8,8 @@ import Slider from "../../components/Slider";
 import ArticlesList from "../../data/ArticlesList";
 
 export default function HomePage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const StyledTypography = styled(Typography)(() => ({
     paddingBottom: "20px",
   }));
@@ -58,7 +61,7 @@ export default function HomePage() {
       />
       <Box textAlign={"center"}>
         <Typography variant="h2">Нещодавні статті:</Typography>
-        <Slider>
+        <Slider currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}>
           {ArticlesList.map((article) => {
             return (
               <>
