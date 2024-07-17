@@ -12,7 +12,9 @@ export default function MediaCard({ image, title, content }) {
   return (
     <Card
       sx={{
-        maxWidth: 345,
+        display: "flex",
+        flexDirection: "column",
+        width: 345,
         bgcolor: theme.palette.primary.light,
         border: "1px solid",
         borderColor: theme.palette.secondary.main,
@@ -35,9 +37,20 @@ export default function MediaCard({ image, title, content }) {
         >
           {title}
         </Typography>
-        <Typography textAlign={"left"}>{content}</Typography>
+        <Typography
+          sx={{
+            textAlign: "left",
+            display: "-webkit-box",
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: 8,
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
+          {content}
+        </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ mt: "auto" }}>
         <YellowButton>Читати</YellowButton>
         <YellowButton>Поділитися</YellowButton>
       </CardActions>
