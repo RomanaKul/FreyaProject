@@ -21,6 +21,10 @@ export default function MediaCard({ image, keyword, title, content }) {
         border: "1px solid",
         borderColor: theme.palette.secondary.main,
         borderRadius: 5,
+        "&:hover": {
+          border: "5px solid",
+          borderColor: theme.palette.secondary.main,
+        },
       }}
     >
       <CardMedia

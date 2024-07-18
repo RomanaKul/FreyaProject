@@ -45,5 +45,10 @@ export const theme = createTheme({
       color: "#160c07",
       fontWeight: "bold",
     },
+
+    body3: {
+      fontSize: 20,
+      color: "#ffe600",
+    },
   },
 });
