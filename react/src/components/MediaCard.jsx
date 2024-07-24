@@ -7,18 +7,24 @@ import {
 } from "@mui/material";
 import { theme } from "../theme";
 import YellowButton from "./YellowButton";
+import PropTypes from "prop-types";
 
-export default function MediaCard({ image, title, content }) {
+export default function MediaCard({ image, keyword, title, content }) {
   return (
     <Card
       sx={{
         display: "flex",
         flexDirection: "column",
+        height: 500,
         width: 345,
         bgcolor: theme.palette.primary.light,
         border: "1px solid",
         borderColor: theme.palette.secondary.main,
         borderRadius: 5,
+        "&:hover": {
+          border: "5px solid",
+          borderColor: theme.palette.secondary.main,
+        },
       }}
     >
       <CardMedia
@@ -42,7 +48,7 @@ export default function MediaCard({ image, title, content }) {
             textAlign: "left",
             display: "-webkit-box",
             WebkitBoxOrient: "vertical",
-            WebkitLineClamp: 8,
+            WebkitLineClamp: 3,
             overflow: "hidden",
             textOverflow: "ellipsis",
           }}
@@ -52,8 +58,15 @@ export default function MediaCard({ image, title, content }) {
       </CardContent>
       <CardActions sx={{ mt: "auto" }}>
         <YellowButton>Читати</YellowButton>
-        <YellowButton>Поділитися</YellowButton>
+        <Typography color={theme.palette.secondary.main}>{keyword}</Typography>
       </CardActions>
     </Card>
   );
 }
+
+MediaCard.propTypes = {
+  image: PropTypes.string,
+  keyword: PropTypes.string,
+  title: PropTypes.string,
+  content: PropTypes.string,
+};

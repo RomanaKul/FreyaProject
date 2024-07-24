@@ -62,11 +62,12 @@ export default function HomePage() {
       <Box textAlign={"center"}>
         <Typography variant="h2">Нещодавні статті:</Typography>
         <Slider currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}>
-          {ArticlesList.map((article) => {
+          {ArticlesList.slice(ArticlesList.length - 5).map((article) => {
             return (
               <MediaCard
                 key={article.key}
                 image={article.image}
+                keyword={article.keyword}
                 title={article.title}
                 content={article.content}
               />
